@@ -18,5 +18,7 @@ This is a text!
 
 ### 1.3 Types of Keys Supported on PuTTYgen
 It is important to know the types of key PuTTYgen supports prior to using it. Below are the key types that it currently supports for SSH-2 and SSH-1 protocol:
+
 SSH-1 protocol: For SSH-1 only supports one key i.e. Rivest–Shamir–Adleman (RSA)
+
 SSH-2 protocol: SSH-2 supports multiple key types that include – Digital Signature Algorithm (DSA), Elliptic Curve Digital Signature Algorithm (ECDSA) and Ed25519.
