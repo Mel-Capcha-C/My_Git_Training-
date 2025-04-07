@@ -54,8 +54,21 @@ ssh-add github_rsa
 # 3. Testing your SSH connection
 You'll need to authenticate this action using your password, which is the SSH key passphrase you created earlier.
 
-Attempts to ssh to GitHub
+## 3.1 Attempts to ssh to GitHub
 ```shell
-ssh -T git@github.com
+ssh -vT git@github.com
 > Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+```
+## 3.2 SSH works, but git clone doesn't
+If direct SSH test works but git clone doesn't, let's create an SSH config file:
+```shell
+notepad notepad $env:USERPROFILE/.ssh/config
+```
+Add these lines:
+```shell
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile $env:USERPROFILE/.ssh/github_rsa
+  IdentitiesOnly yes
 ```
