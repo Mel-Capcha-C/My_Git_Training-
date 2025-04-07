@@ -39,22 +39,23 @@ In a new admin elevated PowerShell window, ensure the ssh-agent is running.
 
 ## 2.1 Go to the SSH keys directory
 Open PowerShell window as administrator.
-
+```shell
 cd "$env:USERPROFILE\.ssh"
-
+```
 ## 2.2 Start the ssh-agent in the background
+```shell
 Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
-
+```
 ## 2.3 Add your SSH key
+```shell
 ssh-add github_rsa
-
+```
 # 3. Testing your SSH connection
 You'll need to authenticate this action using your password, which is the SSH key passphrase you created earlier.
 
 Attempts to ssh to GitHub
 ```shell
 ssh -T git@github.com
-> Hi USERNAME! You've successfully authenticated, but GitHub does not
-> provide shell access.
+> Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
 ```
