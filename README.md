@@ -32,18 +32,29 @@ Go to Settings => SSH and GPG keys => New SSH key and copy the public key genera
 ![image](https://github.com/user-attachments/assets/937ae1f7-3f23-4285-b277-b081bca6ace4)
 
 
-# 2.Adding your SSH key to the ssh-agent
+# 2. Adding your SSH key to the ssh-agent
 Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key. 
 
 In a new admin elevated PowerShell window, ensure the ssh-agent is running.
 
-# 2.1 Go to the SSH keys directory
+## 2.1 Go to the SSH keys directory
+Open PowerShell window as administrator.
 
 cd "$env:USERPROFILE\.ssh"
 
-# 2.2 Start the ssh-agent in the background
+## 2.2 Start the ssh-agent in the background
 Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
 
-# 2.3 Add your SSH key
+## 2.3 Add your SSH key
 ssh-add github_rsa
+
+# 3. Testing your SSH connection
+You'll need to authenticate this action using your password, which is the SSH key passphrase you created earlier.
+
+Attempts to ssh to GitHub
+```shell
+ssh -T git@github.com
+> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> provide shell access.
+```
