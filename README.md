@@ -75,3 +75,7 @@ Host github.com
 # 4. Subheader
 
 Watch Tutorial on Youtube.
+
+# 5. Local Development
+
+# 5.1 Open index.html in your browser
