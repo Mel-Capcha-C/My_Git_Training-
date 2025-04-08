@@ -62,7 +62,7 @@ ssh -vT git@github.com
 ## 3.2 SSH works, but git clone doesn't
 If direct SSH test works but git clone doesn't, let's create an SSH config file:
 ```shell
-notepad notepad $env:USERPROFILE/.ssh/config
+notepad $env:USERPROFILE/.ssh/config
 ```
 Add these lines:
 ```shell
