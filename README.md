@@ -79,3 +79,10 @@ Watch Tutorial on Youtube.
 # 5. Local Development
 
 # 5.1 Open index.html in your browser
+
+# 6. Github dev
+If you add the .dev ending instead of .com to the repo link, e.g
+
+https://github.com/Mel-Capcha-C2/My_Git_Training- => https://github.dev/Mel-Capcha-C2/My_Git_Training-
+
+you will access the web editor. However, to create a terminal view you can create a GitHub Codespace, or clone the repo in a local machine and work from VS Code.
