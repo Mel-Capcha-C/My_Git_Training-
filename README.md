@@ -79,3 +79,114 @@ Watch Tutorial on Youtube.
 # 5. Local Development
 
 # 5.1 Open index.html in your browser
+
+# 6. Github dev
+If you add the .dev ending instead of .com to the repo link, e.g
+
+https://github.com/Mel-Capcha-C2/My_Git_Training- => https://github.dev/Mel-Capcha-C2/My_Git_Training-
+
+you will access the web editor. However, to create a terminal view you can create a GitHub Codespace, or clone the repo in a local machine and work from VS Code.
+
+## 6.0 Git Hidden Folder
+
+There is a hidden folder called `.git` which tells you that our project is a git repo.
+
+If we wanted to create a git repo in a new project we create the folder and then initialize that repo using `git init`
+
+```sh
+mkdir /workspaces/tmp/new-project
+cd /workspaces/tmp/new-project
+git init
+touch Readme.md
+code Readme.md
+git status
+git add Readme.md
+# Make changes to Readme.md
+git commit -a -m "Add Readme file
+```
+
+## 6.1 Cloning
+
+We can clone three ways: HTTPS, SSH, Github CLI
+
+Since we are usng Github Codespaces we'll create a temporary directory in our workspace.
+
+```sh
+mkdir /workspace/tmp
+cd /workspace/tmp
+```
+
+### 6.1.1 HTTPS
+
+```sh
+git clone https://github.com/Mel-Capcha-C2/My_Git_Training-.git
+cd My_Git_Training-
+```
+
+## 6.2 Commands
+
+### 6.2.1 Add
+
+When we want to stage changes that will be included in the commit.
+We use the period . to add all files.
+
+```sh
+git add Readme.md
+git add .
+```
+
+### 6.2.2 Reset
+
+Reset allows you to move Staged changes to be unstaged.
+
+```sh
+git add .
+git reset
+```
+
+### 6.2.3 Status
+Shows you what files will or will not be commited.
+
+```sh
+git status
+```
+
+### 6.2.4 Commit
+
+When we want to commit code we can write git commit which will open the commit edit message in the editor of choice.
+
+```sh
+git commit
+```
+
+### 6.2.5 Gitconfig file
+
+The gitconfig file is what stores global configurations for git such as email, name, editor and more.
+
+
+```sh
+git config --list --show-origin
+```
+or
+```sh
+git config --list --show-scope
+```
+
+When you first install Git on a machine you are supposed to set up your name and email.
+
+```sh
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
+Set the global editor
+
+```sh
+git config --global core.editor $EDITOR
+```
+
+To see the possible values for $EDITOR see https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Setup-and-Config. For example, for visual studio code is the following:
+
+```sh
+git config --global core.editor "code --wait"
+```
